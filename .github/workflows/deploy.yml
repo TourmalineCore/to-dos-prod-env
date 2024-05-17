@@ -1,0 +1,32 @@
+name: Deploy Prod Shared Resources
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-22.04
+    permissions:
+      packages: write
+      contents: read
+      attestations: write
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Create kubeconfig file
+        run: |
+          cd $HOME
+          mkdir .kube
+          echo "${{ secrets.TO_DOS_PROD_KUBECONFIG }}" > .kube/config
+
+      - name: Deploy
+        uses: helmfile/helmfile-action@v1.9.0
+        with:
+          helmfile-version: 'v0.164.0'
+          helm-version: 'v3.14.4'
+          helmfile-args: apply --namespace prod -f deploy/helmfile.yaml
+          helmfile-auto-init: "false"
