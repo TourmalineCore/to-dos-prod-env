@@ -6,3 +6,8 @@ controller:
     type: NodePort
     nodePorts:
       http: "30080"
+  config: 
+    use-proxy-protocol: "true"
+    real-ip-header: proxy_protocol
+    # here use ip range of local subnet area of VM
+    set-real-ip-from: 10.0.1.0/24

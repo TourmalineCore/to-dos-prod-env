@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Push Docker image to Docker Hub
+    name: Deploy Prod Shared Resources
     runs-on: ubuntu-22.04
     permissions:
       packages: write
@@ -17,6 +17,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
+      # https://stackoverflow.com/questions/76081800/github-actions-how-to-store-kubeconfig-in-github-secrets
       - name: Create kubeconfig file
         run: |
           cd $HOME
