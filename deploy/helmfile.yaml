@@ -23,11 +23,11 @@ releases:
           - "--context"
           - "{{`{{.Environment.KubeContext}}`}}"
 
-  # - name: ingress-nginx
-  #   labels:
-  #     app: ingress-nginx
-  #   wait: true
-  #   chart: ingress-nginx/ingress-nginx
-  #   version: 4.10.1
-  #   values:
-  #     - values-ingress-nginx.yaml.gotmpl
+  - name: ingress-nginx
+    labels:
+      app: ingress-nginx
+    wait: true
+    chart: ingress-nginx/ingress-nginx
+    version: 4.10.1
+    values:
+      - values-ingress-nginx.yaml.gotmpl
