@@ -6,6 +6,7 @@ controller:
     type: NodePort
     nodePorts:
       http: "30080"
+      https: "30443"
   config: 
     use-proxy-protocol: "true"
     real-ip-header: proxy_protocol
