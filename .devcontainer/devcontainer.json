@@ -6,18 +6,13 @@
 	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
 	"onCreateCommand": "helm plugin install https://github.com/databus23/helm-diff --version=3.9.6",
 	"features": {
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1.4.5": {
-			"version": "20.10",
-			"enableNonRootDocker": "true",
-			"moby": "true"
-		},
 		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1.1.9": {
-			"version": "1.30.0",
-			"helm": "3.14.4",
+			"version": "1.31.2",
+			"helm": "3.16.2",
 			"minikube": "none"
 		},
 		"ghcr.io/nucleuscloud/devcontainer-features/helmfile:0.1.0": {
-			"version": "v0.164.0"
+			"version": "v0.169.1"
 		}
 	},
 	// Use this environment variable if you need to bind mount your local source code into a new container.
