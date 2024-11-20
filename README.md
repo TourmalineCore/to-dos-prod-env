@@ -1,10 +1,12 @@
 # to-dos-prod-env
 
-This repo's purpose is deployment of to-dos product's shared resources to Production cluster. In this case the shared resources for to-dos-ui and to-dos-api are nginx and https.
+This repo's purpose is deployment of to-dos product's shared resources to Production cluster. In this case the shared resources for [to-dos-ui](https://github.com/TourmalineCore/to-dos-ui) and [to-dos-api](https://github.com/TourmalineCore/to-dos-api) are nginx and https.
 
-Deployment happens only from a pipeline. It isn't happining locally as for to-dos-local-env use case.
+Deployment happens only from a pipeline. It isn't happining locally as for [to-dos-local-env](https://github.com/TourmalineCore/to-dos-local-env) use case.
 
-Here locally you can only look at the final helmfile to be applied from the pipeline. 
+Here locally you can only look at the final helmfile to be applied from the pipeline.
+
+More info about the project and its related repos can be found here: [to-dos-documentation](https://github.com/TourmalineCore/to-dos-documentation).
 
 ## Prerequisites
 
